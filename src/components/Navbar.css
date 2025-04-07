@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .navbar.light {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #222;
+  }
+  
+  .navbar.dark {
+    background-color: rgba(18, 18, 18, 0.85);
+    color: #f0f0f0;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    font-weight: 500;
+    color: inherit;
+  }
+  
+  .nav-links li a:hover {
+    text-decoration: underline;
+  }
+  
+  .theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: inherit;
+  }
+  
