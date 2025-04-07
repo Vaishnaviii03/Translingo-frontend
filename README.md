@@ -2,7 +2,7 @@
 
 A sleek, responsive language translation web app built with **React** and **Tailwind CSS**. TransLingo allows users to input text and get real-time translations in French or Spanish using intelligent NLP models running on a Flask backend. Featuring a modern UI and smooth animations for an engaging user experience.
 
-🔗 [Live Demo](https://your-translingo-deployment-link.com)
+🔗 [Live Demo](https://dashing-starship-f27d7a.netlify.app/)
 
 > ## 📸 Frontend Preview
 
