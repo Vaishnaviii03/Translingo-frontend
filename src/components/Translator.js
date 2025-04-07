@@ -20,7 +20,7 @@ function Translator() {
 
   const handleTranslate = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/translate', {
+      const response = await axios.post('https://translingo-backend.onrender.com/translate', {
         sentence: english,
       });
       setFrench(response.data.translation);
