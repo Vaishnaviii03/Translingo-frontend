@@ -11,7 +11,18 @@ function Translator() {
     "What is your name?",
     "I love programming.",
     "Can you help me?",
-    "The weather is nice today."
+    "The weather is nice today.",
+    "New Jersey is sometimes quiet during autumn, and it is snowy in April.",
+    "The United States is usually chilly during July, and it is usually freezing in November.",
+    "California is usually quiet during March, and it is usually hot in June.",
+    "The United States is sometimes mild during June, and it is cold in September.",
+    "Your least liked fruit is the grape, but my least liked is the apple.",
+    "His favorite fruit is the orange, but my favorite is the grape.",
+    "Paris is relaxing during December, but it is usually chilly in July.",
+    "New Jersey is busy during spring, and it is never hot in March.",
+    "Our least liked fruit is the lemon, but my least liked is the grape.",
+    "The United States is sometimes busy during January, and it is sometimes warm in November.",
+    "The lime is her least liked fruit, but the banana is my least liked."
   ];
 
   const handleSampleSelect = (e) => {
@@ -20,10 +31,18 @@ function Translator() {
 
   const handleTranslate = async () => {
     try {
-      const response = await axios.post('https://translingo-backend.onrender.com/translate', {
+      console.log("Translating:", english); // Debugging step
+      const response = await axios.post('https://translingo-backend.onrender.com/translate', { // Correct deployed backend URL
         sentence: english,
       });
-      setFrench(response.data.translation);
+
+      console.log('API Response:', response); // Log the full response
+
+      if (response.data && response.data.translation) {
+        setFrench(response.data.translation);
+      } else {
+        setFrench('Translation not available.');
+      }
     } catch (error) {
       console.error("Translation error:", error);
       setFrench("Translation failed.");
@@ -34,7 +53,7 @@ function Translator() {
     <div className="translator-container">
       <h1>English to French Translator</h1>
 
-      <select onChange={handleSampleSelect} className="sample-select" defaultValue="">
+      <select onChange={handleSampleSelect} className="sample-select" value={english}>
         <option value="" disabled>Select a sample sentence</option>
         {sampleSentences.map((sentence, index) => (
           <option key={index} value={sentence}>{sentence}</option>
